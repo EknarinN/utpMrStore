@@ -81,5 +81,18 @@ namespace utpStore.sqlQuery
         }
 
         #endregion Report Approve
+
+        #region Report Stock
+
+        public DataSet DataSetStockReport(string sql)
+        {
+            dsStock dsStock = new dsStock();
+            adapter = new MySqlDataAdapter(sql, connOpen());
+            adapter.Fill(dsStock, dsStock.Tables[0].TableName);
+            return dsStock;
+        }
+
+        #endregion Report Stock
     }
+
 }

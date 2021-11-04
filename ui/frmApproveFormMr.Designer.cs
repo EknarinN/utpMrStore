@@ -253,6 +253,7 @@ namespace utpStore.ui
             // btnPrintApprove
             // 
             this.btnPrintApprove.BackColor = System.Drawing.Color.Olive;
+            this.btnPrintApprove.Enabled = false;
             this.btnPrintApprove.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.btnPrintApprove.ForeColor = System.Drawing.Color.White;
             this.btnPrintApprove.Location = new System.Drawing.Point(1104, 129);

@@ -37,29 +37,20 @@ namespace utpStore.ui
             this.lblCurrentDate = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblCurrentTime = new System.Windows.Forms.Label();
-            this.dataGridReceive = new System.Windows.Forms.DataGridView();
-            this.gBoxReceiveDocumentDetail = new System.Windows.Forms.GroupBox();
-            this.txtReceiveNo = new System.Windows.Forms.TextBox();
-            this.lblReceiveNo = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker_SearchDataByDate = new System.Windows.Forms.DateTimePicker();
-            this.lblSearchDataByDate = new System.Windows.Forms.Label();
-            this.gBoxSearchData = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.btnSearchFirstName = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.timerCurrentTime = new System.Windows.Forms.Timer(this.components);
+            this.btnExportExcel = new System.Windows.Forms.Button();
+            this.btnExportPdf = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gcStock = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gBoxTitleReceive.SuspendLayout();
             this.gBoxCurrentDateTime.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridReceive)).BeginInit();
-            this.gBoxReceiveDocumentDetail.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.gBoxSearchData.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gBoxTitleReceive
@@ -142,152 +133,6 @@ namespace utpStore.ui
             this.lblCurrentTime.TabIndex = 6;
             this.lblCurrentTime.Text = "Current Time";
             // 
-            // dataGridReceive
-            // 
-            this.dataGridReceive.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridReceive.Location = new System.Drawing.Point(12, 210);
-            this.dataGridReceive.Name = "dataGridReceive";
-            this.dataGridReceive.Size = new System.Drawing.Size(1260, 486);
-            this.dataGridReceive.TabIndex = 58;
-            // 
-            // gBoxReceiveDocumentDetail
-            // 
-            this.gBoxReceiveDocumentDetail.BackColor = System.Drawing.Color.Gainsboro;
-            this.gBoxReceiveDocumentDetail.Controls.Add(this.txtReceiveNo);
-            this.gBoxReceiveDocumentDetail.Controls.Add(this.lblReceiveNo);
-            this.gBoxReceiveDocumentDetail.Location = new System.Drawing.Point(603, 62);
-            this.gBoxReceiveDocumentDetail.Name = "gBoxReceiveDocumentDetail";
-            this.gBoxReceiveDocumentDetail.Size = new System.Drawing.Size(669, 89);
-            this.gBoxReceiveDocumentDetail.TabIndex = 56;
-            this.gBoxReceiveDocumentDetail.TabStop = false;
-            // 
-            // txtReceiveNo
-            // 
-            this.txtReceiveNo.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.txtReceiveNo.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.txtReceiveNo.Location = new System.Drawing.Point(7, 43);
-            this.txtReceiveNo.Name = "txtReceiveNo";
-            this.txtReceiveNo.Size = new System.Drawing.Size(656, 32);
-            this.txtReceiveNo.TabIndex = 9;
-            this.txtReceiveNo.Text = "Search All Character In Table";
-            this.txtReceiveNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lblReceiveNo
-            // 
-            this.lblReceiveNo.AutoSize = true;
-            this.lblReceiveNo.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblReceiveNo.ForeColor = System.Drawing.Color.Teal;
-            this.lblReceiveNo.Location = new System.Drawing.Point(3, 16);
-            this.lblReceiveNo.Name = "lblReceiveNo";
-            this.lblReceiveNo.Size = new System.Drawing.Size(134, 24);
-            this.lblReceiveNo.TabIndex = 8;
-            this.lblReceiveNo.Text = "ค้นหาข้อมูลตามคำ";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.Gainsboro;
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 157);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1260, 47);
-            this.groupBox2.TabIndex = 53;
-            this.groupBox2.TabStop = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(948, 8);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 32);
-            this.button3.TabIndex = 50;
-            this.button3.Text = "EXPORT PDF";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Teal;
-            this.button1.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1104, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 32);
-            this.button1.TabIndex = 49;
-            this.button1.Text = "EXPORT EXCEL";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // dateTimePicker_SearchDataByDate
-            // 
-            this.dateTimePicker_SearchDataByDate.CalendarFont = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dateTimePicker_SearchDataByDate.CalendarForeColor = System.Drawing.Color.Teal;
-            this.dateTimePicker_SearchDataByDate.CalendarTitleForeColor = System.Drawing.Color.Teal;
-            this.dateTimePicker_SearchDataByDate.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dateTimePicker_SearchDataByDate.Location = new System.Drawing.Point(10, 43);
-            this.dateTimePicker_SearchDataByDate.Name = "dateTimePicker_SearchDataByDate";
-            this.dateTimePicker_SearchDataByDate.Size = new System.Drawing.Size(184, 32);
-            this.dateTimePicker_SearchDataByDate.TabIndex = 45;
-            // 
-            // lblSearchDataByDate
-            // 
-            this.lblSearchDataByDate.AutoSize = true;
-            this.lblSearchDataByDate.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.lblSearchDataByDate.ForeColor = System.Drawing.Color.Teal;
-            this.lblSearchDataByDate.Location = new System.Drawing.Point(6, 16);
-            this.lblSearchDataByDate.Name = "lblSearchDataByDate";
-            this.lblSearchDataByDate.Size = new System.Drawing.Size(174, 24);
-            this.lblSearchDataByDate.TabIndex = 44;
-            this.lblSearchDataByDate.Text = "ค้นหาข้อมูลตามช่วงวันที่";
-            // 
-            // gBoxSearchData
-            // 
-            this.gBoxSearchData.BackColor = System.Drawing.Color.Gainsboro;
-            this.gBoxSearchData.Controls.Add(this.label1);
-            this.gBoxSearchData.Controls.Add(this.dateTimePicker1);
-            this.gBoxSearchData.Controls.Add(this.btnSearchFirstName);
-            this.gBoxSearchData.Controls.Add(this.lblSearchDataByDate);
-            this.gBoxSearchData.Controls.Add(this.dateTimePicker_SearchDataByDate);
-            this.gBoxSearchData.Location = new System.Drawing.Point(12, 62);
-            this.gBoxSearchData.Name = "gBoxSearchData";
-            this.gBoxSearchData.Size = new System.Drawing.Size(585, 89);
-            this.gBoxSearchData.TabIndex = 42;
-            this.gBoxSearchData.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(200, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 24);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "ถึง";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.Teal;
-            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.Teal;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(236, 43);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(184, 32);
-            this.dateTimePicker1.TabIndex = 47;
-            // 
-            // btnSearchFirstName
-            // 
-            this.btnSearchFirstName.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnSearchFirstName.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchFirstName.ForeColor = System.Drawing.Color.White;
-            this.btnSearchFirstName.Location = new System.Drawing.Point(426, 43);
-            this.btnSearchFirstName.Name = "btnSearchFirstName";
-            this.btnSearchFirstName.Size = new System.Drawing.Size(150, 32);
-            this.btnSearchFirstName.TabIndex = 46;
-            this.btnSearchFirstName.Text = "แสดงข้อมูล";
-            this.btnSearchFirstName.UseVisualStyleBackColor = false;
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Gainsboro;
@@ -315,32 +160,87 @@ namespace utpStore.ui
             // 
             this.timerCurrentTime.Tick += new System.EventHandler(this.timerCurrentTime_Tick);
             // 
+            // btnExportExcel
+            // 
+            this.btnExportExcel.BackColor = System.Drawing.Color.Teal;
+            this.btnExportExcel.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportExcel.ForeColor = System.Drawing.Color.White;
+            this.btnExportExcel.Location = new System.Drawing.Point(1104, 8);
+            this.btnExportExcel.Name = "btnExportExcel";
+            this.btnExportExcel.Size = new System.Drawing.Size(150, 32);
+            this.btnExportExcel.TabIndex = 49;
+            this.btnExportExcel.Text = "EXPORT EXCEL";
+            this.btnExportExcel.UseVisualStyleBackColor = false;
+            this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
+            // 
+            // btnExportPdf
+            // 
+            this.btnExportPdf.BackColor = System.Drawing.Color.Red;
+            this.btnExportPdf.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportPdf.ForeColor = System.Drawing.Color.White;
+            this.btnExportPdf.Location = new System.Drawing.Point(948, 8);
+            this.btnExportPdf.Name = "btnExportPdf";
+            this.btnExportPdf.Size = new System.Drawing.Size(150, 32);
+            this.btnExportPdf.TabIndex = 50;
+            this.btnExportPdf.Text = "EXPORT PDF";
+            this.btnExportPdf.UseVisualStyleBackColor = false;
+            this.btnExportPdf.Click += new System.EventHandler(this.btnExportPdf_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.Gainsboro;
+            this.groupBox2.Controls.Add(this.btnExportPdf);
+            this.groupBox2.Controls.Add(this.btnExportExcel);
+            this.groupBox2.Location = new System.Drawing.Point(12, 62);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1260, 47);
+            this.groupBox2.TabIndex = 53;
+            this.groupBox2.TabStop = false;
+            // 
+            // gcStock
+            // 
+            this.gcStock.Location = new System.Drawing.Point(12, 115);
+            this.gcStock.MainView = this.gridView1;
+            this.gcStock.Name = "gcStock";
+            this.gcStock.Size = new System.Drawing.Size(1260, 581);
+            this.gcStock.TabIndex = 56;
+            this.gcStock.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.gridView1.GridControl = this.gcStock;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsBehavior.AllowFixedGroups = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
             // frmStockDataFormMr
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1284, 761);
+            this.Controls.Add(this.gcStock);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridReceive);
-            this.Controls.Add(this.gBoxReceiveDocumentDetail);
             this.Controls.Add(this.gBoxTitleReceive);
             this.Controls.Add(this.gBoxCurrentDateTime);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.gBoxSearchData);
             this.Font = new System.Drawing.Font("Prompt", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.Name = "frmStockDataFormMr";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ข้อมูลคลัง";
+            this.Load += new System.EventHandler(this.frmStockDataFormMr_Load);
             this.gBoxTitleReceive.ResumeLayout(false);
             this.gBoxTitleReceive.PerformLayout();
             this.gBoxCurrentDateTime.ResumeLayout(false);
             this.gBoxCurrentDateTime.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridReceive)).EndInit();
-            this.gBoxReceiveDocumentDetail.ResumeLayout(false);
-            this.gBoxReceiveDocumentDetail.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.gBoxSearchData.ResumeLayout(false);
-            this.gBoxSearchData.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gcStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -353,21 +253,13 @@ namespace utpStore.ui
         private System.Windows.Forms.Label lblCurrentDate;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblCurrentTime;
-        private System.Windows.Forms.DataGridView dataGridReceive;
-        private System.Windows.Forms.GroupBox gBoxReceiveDocumentDetail;
-        private System.Windows.Forms.TextBox txtReceiveNo;
-        private System.Windows.Forms.Label lblReceiveNo;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker_SearchDataByDate;
-        private System.Windows.Forms.Label lblSearchDataByDate;
-        private System.Windows.Forms.GroupBox gBoxSearchData;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnSearchFirstName;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Timer timerCurrentTime;
+        private System.Windows.Forms.Button btnExportExcel;
+        private System.Windows.Forms.Button btnExportPdf;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private DevExpress.XtraGrid.GridControl gcStock;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

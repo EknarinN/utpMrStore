@@ -24,6 +24,7 @@ namespace utpStore.ui
 
         private void fillDataGrid()
         {
+            // ชงกาแฟแป๊ป
             dataGridReceive.DataSource = null;
             totalPrice = 0;
             DataTable dt = new DataTable();
@@ -225,24 +226,32 @@ namespace utpStore.ui
                 string receiveId = null;
                 for (int i = 0; i < 1; i++)
                 {
+                    string receive_no = dataGridReceive.Rows[i].Cells[1].Value.ToString();
+                    string date = DateTime.Now.ToString("yyyy-MM-dd");
+                    string invoice_no = dataGridReceive.Rows[i].Cells[3].Value.ToString();
+                    string vendor_id = dataGridReceive.Rows[i].Cells[4].Value.ToString();
+                    int amount = dataGridReceive.Rows.Count;
+                    decimal grandTotalPrice = Convert.ToDecimal(txtGrandTotalPrice.Text);
+
                     string sqlInsertReceive = string.Format(@"insert into hosp_mr_store.receive (hosp_mr_store.receive.receive_no,
                                                                                                  hosp_mr_store.receive.receive_date,
                                                                                                     hosp_mr_store.receive.invoice_no,
                                                                                                     hosp_mr_store.receive.vendor_id,
                                                                                                     hosp_mr_store.receive.total_amount,
                                                                                                     hosp_mr_store.receive.grand_total_price)
-                                                                                                    values('{0}','{1}','{2}','{3}','{4}','{5}') ",
-                                                                                                    dataGridReceive.Rows[i].Cells[1].Value.ToString(),
-                                                                                                    DateTime.Now.ToString("yyyy-MM-dd"),
-                                                                                                    dataGridReceive.Rows[i].Cells[3].Value.ToString(),
-                                                                                                    dataGridReceive.Rows[i].Cells[4].Value.ToString(),
-                                                                                                    dataGridReceive.Rows.Count - 1,
-                                                                                                    txtGrandTotalPrice.Text);
+                                                                                                    values('{0}','{1}','{2}','{3}','{4}','{5}') ", 
+                                                                                                    receive_no
+                                                                                                    ,date
+                                                                                                    , invoice_no
+                                                                                                    , vendor_id
+                                                                                                    , amount
+                                                                                                    , grandTotalPrice
+                                                                                                    );
                     dataAccess.executeSQL(sqlInsertReceive);
                     receiveId = dataAccess.retreiveData(@"select max(hosp_mr_store.receive.id) from hosp_mr_store.receive").Rows[0][0].ToString();
                 }
 
-                for (int i = 0; i < dataGridReceive.RowCount - 1; i++)
+                for (int i = 0; i < dataGridReceive.RowCount; i++)
                 {
                     //Receive Detail
                     string sqlInsertReceiveDetail = string.Format(@"insert into hosp_mr_store.receive_detail(hosp_mr_store.receive_detail.receive_id,hosp_mr_store.receive_detail.form_id,hosp_mr_store.receive_detail.qty,hosp_mr_store.receive_detail.unit,hosp_mr_store.receive_detail.unit_price,hosp_mr_store.receive_detail.total_price) values('{0}','{1}','{2}','{3}','{4}','{5}')", receiveId, dataGridReceive.Rows[i].Cells[5].Value.ToString(), dataGridReceive.Rows[i].Cells[6].Value.ToString(), dataGridReceive.Rows[i].Cells[7].Value.ToString(), dataGridReceive.Rows[i].Cells[8].Value.ToString(), dataGridReceive.Rows[i].Cells[9].Value.ToString());

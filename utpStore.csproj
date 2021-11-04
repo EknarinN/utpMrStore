@@ -52,6 +52,8 @@
     <Reference Include="DevExpress.XtraCharts.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGauges.v21.1.Core, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v21.1, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v21.1.Extensions, Version=21.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -112,11 +114,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsApproveReport.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dataSet_report\dsStock.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsStock.xsd</DependentUpon>
+    </Compile>
     <Compile Include="report\rptApprove.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="report\rptApprove.Designer.cs">
       <DependentUpon>rptApprove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report\rptStock.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report\rptStock.Designer.cs">
+      <DependentUpon>rptStock.cs</DependentUpon>
     </Compile>
     <Compile Include="sqlQuery\dataAccess.cs" />
     <Compile Include="ui\frmApproveFormMr.cs">
@@ -179,6 +192,9 @@
     <EmbeddedResource Include="report\rptApprove.resx">
       <DependentUpon>rptApprove.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="report\rptStock.resx">
+      <DependentUpon>rptStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ui\frmApproveFormMr.resx">
       <DependentUpon>frmApproveFormMr.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,6 +242,17 @@
     </None>
     <None Include="dataSet_report\dsApproveReport.xss">
       <DependentUpon>dsApproveReport.xsd</DependentUpon>
+    </None>
+    <None Include="dataSet_report\dsStock.xsc">
+      <DependentUpon>dsStock.xsd</DependentUpon>
+    </None>
+    <None Include="dataSet_report\dsStock.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsStock.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dataSet_report\dsStock.xss">
+      <DependentUpon>dsStock.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

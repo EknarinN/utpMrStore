@@ -295,11 +295,17 @@ namespace utpStore.ui
                 for (int i = 0; i < dataGridRequestDetail.Rows.Count; i++)
 
                 {
+                    string form_id = dataGridRequestDetail.Rows[i].Cells[5].Value.ToString();
+                    int qty = Convert.ToInt32(dataGridRequestDetail.Rows[i].Cells[7].Value.ToString());
+                    decimal unit_price = Convert.ToDecimal(dataGridRequestDetail.Rows[i].Cells[9].Value.ToString());
+                    string unit = dataGridRequestDetail.Rows[i].Cells[8].Value.ToString();
+                    decimal total_price = Convert.ToDecimal(dataGridRequestDetail.Rows[i].Cells[10].Value.ToString());
+
                     //Insert To Sell_Detail
-                    string sqlInsertSellDetail = string.Format(@"insert into hosp_mr_store.sell_detail (sell_id, form_id, qty, unit_price, unit, total_price) values('{0}','{1}','{2}','{3}','{4}','{5}')", sellId, dataGridRequestDetail.Rows[i].Cells[5].Value.ToString(), Convert.ToInt32(dataGridRequestDetail.Rows[i].Cells[6].Value.ToString()), Convert.ToDecimal(dataGridRequestDetail.Rows[i].Cells[8].Value.ToString()), dataGridRequestDetail.Rows[i].Cells[7].Value.ToString(), Convert.ToDecimal(dataGridRequestDetail.Rows[i].Cells[9].Value.ToString()));
+                    string sqlInsertSellDetail = string.Format(@"insert into hosp_mr_store.sell_detail (sell_id, form_id, qty, unit_price, unit, total_price) values ('{0}','{1}','{2}','{3}','{4}','{5}')", sellId, form_id  , qty , unit_price , unit , total_price);
                     dataAccess.executeSQL(sqlInsertSellDetail);
 
-                    string sqlUpdateStock = string.Format(@"update hosp_mr_store.stock set hosp_mr_store.stock.remaining = hosp_mr_store.stock.remaining - '{0}' where hosp_mr_store.stock.form_id = '{1}'", Convert.ToInt32(dataGridRequestDetail.Rows[i].Cells[6].Value.ToString()), dataGridRequestDetail.Rows[i].Cells[5].Value.ToString());
+                    string sqlUpdateStock = string.Format(@"update hosp_mr_store.stock set hosp_mr_store.stock.remaining = hosp_mr_store.stock.remaining - '{0}' where hosp_mr_store.stock.form_id = '{1}'", qty, form_id);
                     dataAccess.executeSQL(sqlUpdateStock);
                 }
             }

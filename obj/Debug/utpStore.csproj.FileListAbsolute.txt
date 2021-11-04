@@ -218,3 +218,4 @@ D:\Eknarin\Project\utpStore\utpStore\obj\Debug\utpStore.csproj.CopyComplete
 D:\Eknarin\Project\utpStore\utpStore\obj\Debug\utpStore.exe
 D:\Eknarin\Project\utpStore\utpStore\obj\Debug\utpStore.pdb
 D:\Eknarin\Project\utpStore\utpStore\obj\Debug\utpStore.csprojAssemblyReference.cache
+D:\Eknarin\Project\utpStore\utpStore\obj\Debug\utpStore.report.rptStock.resources
